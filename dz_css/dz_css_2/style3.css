@@ -1,0 +1,12 @@
+.navigaciy {
+    width: 15em;
+    background-color: #cccccc;
+    float: left;
+}
+.text {
+    background-color: #aaaaaa;
+    margin-bottom: 2em;
+}
+.footer {
+    background: #cccccc;
+}

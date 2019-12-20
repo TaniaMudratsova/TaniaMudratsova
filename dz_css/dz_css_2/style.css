@@ -1,0 +1,26 @@
+.z2 {
+    display: inline-block;
+}
+.t3 {
+    background-image: url(img/cards.png);
+    background-repeat: no-repeat;
+    background-position: -145px -201px;
+    width: 138px; height: 187px;
+}
+.c5 {
+    background-image: url(img/cards.png);
+    background-repeat: no-repeat;
+    background-position: -433px -599px;
+    width: 138px; height: 187px;
+}
+.b9 {
+    background-image: url(img/cards.png);
+    background-repeat: no-repeat;
+    background-position: -289px -1395px;
+    width: 138px; height: 187px;
+}
+.z3 {
+    display: inline-block;
+    width: 38px;
+}
+

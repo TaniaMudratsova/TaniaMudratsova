@@ -1,0 +1,21 @@
+
+.text {
+    background-color: #aaaaaa;
+    margin-bottom: 2em;
+}
+.footer {
+    background: #cccccc;
+}
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+}
+.vso{
+    display: flex;
+    flex-direction: column;
+}
+.navigaciy {
+    width: 15em;
+    background-color: #cccccc;
+}
