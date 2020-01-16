@@ -1,0 +1,43 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Задание 1</title>
+</head>
+<body>
+<form method="post" name="form" action="">
+    <div>Введите пароль:</div>
+    <input type="text" class="password">
+    <div>Подтвердите пароль:</div>
+    <input type="text" class="cor_password">
+    <div class="error"></div>
+    <input type="submit" value="submit" id="submit">
+</form>
+<script src="dz_1.js"></script>
+<script>
+    $(".cor_password").on("keyup", function() {
+
+        var value_input1 = $(".password").val();
+        var value_input2 = $(this).val();
+
+        if(value_input1 != value_input2) {
+
+            $(".error").html("Пароли не совпадают!");
+            $("#submit").attr("disabled", "disabled");
+            $(".password").css('border', 'red 3px solid');
+            $(".cor_password").css('border', 'red 3px solid');
+
+        } else {
+
+            $("#submit").removeAttr("disabled");
+            $(".password").css('border', 'green 2px solid');
+            $(".cor_password").css('border', 'green 2px solid')
+            $(".error").html("");
+
+        }
+    });
+</script>
+</body>
+</html>
