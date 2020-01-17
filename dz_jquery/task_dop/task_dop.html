@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+    <META charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+     <!-- <style type="text/css">
+            table {
+                width: 600px;
+                border-collapse: collapse;
+                border: 1px dotted black;
+            }
+            td, th {padding: 1px;
+                border: 1px dotted black;
+                text-align: left;
+            }
+            tr:nth-child(odd) { background-color: darkgray}
+            tr:first-child {background-color: gray;
+                            color: white;
+                            text-align-last: center;}
+            caption {caption-side: bottom}
+            tr:hover {cursor: pointer;
+                      background-color: aqua}//
+        </style> -->
+    <TITLE>Пример страницы</TITLE>
+</HEAD>
+<BODY>
+<table id="table_data">
+    <caption>данные о сотрудниках</caption>
+    <tr>
+        <th>ФИО</th>
+        <th>пол</th>
+        <th>должность</th>
+        <th>дата рож.</th>
+        <th>Данные 01</th>
+        <th>Данные 02</th>
+    </tr>
+    <tr>
+        <th>Иванов Иван Иванович</th>
+        <td>М</td>
+        <td>начальник</td>
+        <td>01.01.1960</td>
+        <td>4567</td>
+        <td>3453</td>
+    </tr>
+    <tr>
+        <th>Петрова Илонна Петровна</th>
+        <td>Ж</td>
+        <td>секретарь</td>
+        <td>01.01.1989</td>
+        <td>98795</td>
+        <td>46523</td>
+    </tr>
+    <tr>
+        <th>Сидоров Илья Игоревич</th>
+        <td>М</td>
+        <td>бухгалтер</td>
+        <td>01.01.1979</td>
+        <td>743434</td>
+        <td>987979</td>
+    </tr>
+    <tr>
+        <th>Пупин Фёдор Фёдорович</th>
+        <td>М</td>
+        <td>водитель</td>
+        <td>01.01.1963</td>
+        <td>74323434</td>
+        <td>9232379</td>
+    </tr>
+    <tr>
+        <th>Крупин Сергей Иванович</th>
+        <td>М</td>
+        <td>водитель 2</td>
+        <td>01.01.1983</td>
+        <td>3234534</td>
+        <td>923123379</td>
+    </tr>
+</table>
+<input type="button" id="hideshow" value="Нет скрытых строк">
+<script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+        $('table').css({
+            border: '1px dotted',
+            width: '600px',
+            borderCollapse: 'collapse'
+        });
+        $('td').css({
+            padding: '1px',
+            border: '1px dotted black',
+            textAlign: 'left'
+        });
+        $('tr').css({
+            padding: '1px',
+            border: '1px dotted black',
+            textAlign: 'left'
+        });
+        $('tr:even').css({
+            backgroundColor: 'darkgray'
+        });
+        $('tr:first-child').css({
+            backgroundColor: 'gray',
+            color: 'white',
+            textAlignLast: 'center'
+        });
+        $('caption').css({
+            captionSide: 'bottom',
+            textAlign: 'center',
+            padding: '0'
+        });
+
+        $('.hover').css({cursor: 'pointer', backgroundColor: 'aqua'});
+
+        $('tr:even').hover(
+            function () {
+                $(this).css({cursor: 'pointer', backgroundColor: 'aqua'})},
+            function () {
+                $(this).css({backgroundColor: 'darkgray'});});
+
+        $('tr:odd').hover(
+            function () {
+                $(this).css({cursor: 'pointer', backgroundColor: 'aqua'})},
+            function () {
+                $(this).css({backgroundColor: 'white'});});
+
+        $('tr:first-child').hover(
+            function () {
+                $(this).css({cursor: 'pointer', backgroundColor: 'aqua'})},
+            function () {
+                $(this).css({ backgroundColor: 'gray', color: 'white', textAlignLast: 'center'});});
+
+        $("tr").click(function () {
+            $(this).hide(1000);
+            $('#hideshow').val('Показать скрытые строки');
+        });
+
+        $('#hideshow').click(function () {
+            $('tr:hidden').show();
+            $('#hideshow').val('Нет скрытых строк');
+        });
+    })
+</script>
+</BODY>
+</HTML>
